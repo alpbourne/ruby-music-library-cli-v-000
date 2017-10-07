@@ -8,7 +8,7 @@ class MusicLibraryController
   def call
     input = ""
 
-    while input != "exit"
+    until input == "exit"
       puts "Welcome to your music library!"
       puts "To list all of your songs, enter 'list songs'."
       puts "To list all of the artists in your library, enter 'list artists'."
@@ -53,5 +53,7 @@ class MusicLibraryController
     genre_list = Genre.all.sort_by {|genre| genre.name}
     genre_list.each {|genre| puts "#{i+=1}. #{genre.name}"}
   end
+
+  def list_songs_by_artist
 
 end
